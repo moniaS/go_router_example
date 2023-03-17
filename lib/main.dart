@@ -79,17 +79,17 @@ GoRouter buildRouter() {
               ),
             ],
           ),
-          // GoRoute(
-          //   parentNavigatorKey: _shellNavigatorKey,
-          //   name: Routes.categories,
-          //   path: '/categories',
-          //   pageBuilder: (BuildContext context, GoRouterState state) {
-          //     return NoTransitionPage(
-          //       key: state.pageKey,
-          //       child: const CategoriesScreen(),
-          //     );
-          //   },
-          // ),
+          GoRoute(
+            parentNavigatorKey: _shellNavigatorKey,
+            name: Routes.categories,
+            path: '/categories',
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return NoTransitionPage(
+                key: state.pageKey,
+                child: const CategoriesScreen(),
+              );
+            },
+          ),
         ],
       )
     ],
@@ -185,6 +185,7 @@ class BookDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    GoRouterState.of(context);
     return Scaffold(
       appBar: AppBar(),
       body: Center(
